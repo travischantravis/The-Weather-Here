@@ -17,12 +17,12 @@ async function getData() {
         const marker = L.marker([item.lat, item.lon]).addTo(mymap);
         let txt = `The weather here at ${item.lat}&deg;, ${item.lon}&deg; is ${item.weather.summary} with a temperature of ${item.weather.temperature} degrees celsius.`;
 
-        if (item.air.value < 0) {
-            txt += ' No air quality reading.';
-        } else {
-            txt += ` The concentration of particulate matter (${item.air.parameter})
-               is ${item.air.value} ${item.air.unit} last read on ${item.air.lastUpdated}`;
-        }
+        // if (item.air.value < 0) {
+        //     txt += ' No air quality reading.';
+        // } else {
+        //     txt += ` The concentration of particulate matter (${item.air.parameter})
+        //        is ${item.air.value} ${item.air.unit} last read on ${item.air.lastUpdated}`;
+        // }
         marker.bindPopup(txt);
     }
     console.log(data);
