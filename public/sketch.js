@@ -16,10 +16,11 @@ if ('geolocation' in navigator) {
             const json = await response.json();
             console.log(json);
             weather = json.weather.currently;
+            air = json.air_quality.results[0].measurements[0];
+
 
             document.getElementById('summary').textContent = weather.summary;
             document.getElementById('temperature').textContent = weather.temperature;
-            air = json.air_quality.results[0].measurements[0];
 
             document.getElementById('aq_parameter').textContent = air.parameter;
             document.getElementById('aq_value').textContent = air.value;
