@@ -2,8 +2,9 @@
   "name": "module3",
   "version": "1.0.0",
   "description": "the weather here",
-  "main": "index.html",
+  "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Travis Chan",
