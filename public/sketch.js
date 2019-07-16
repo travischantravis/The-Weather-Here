@@ -13,8 +13,9 @@ if ('geolocation' in navigator) {
             const api_url = `weather/${lat},${lon}`;
             const response = await fetch(api_url);
             const json = await response.json();
-            console.log(json);
+            //console.log(json);
             weather = json.weather.currently;
+            console.log(weather);
             // air = json.air_quality.results[0].measurements[0];
 
 

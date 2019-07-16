@@ -6,7 +6,7 @@ require('dotenv').config();
 
 const app = express();
 const port = process.env.PORT || 3000;
-app.listen(port, () => console.log(`Starting server at ${port}`));
+app.listen(port, () => {console.log(`Starting server at ${port}`)});
 app.use(express.static('public'));
 app.use(express.json({
     limit: '1mb'
@@ -22,7 +22,7 @@ app.get('/api', (request, response) => {
             return;
         }
         response.json(data);
-    })
+    });
 });
 
 app.post('/api', (request, response) => {
@@ -49,10 +49,11 @@ app.get('/weather/:latlon', async (request, response) => {
     // const aq_response = await fetch(aq_url);
     // const aq_data = await aq_response.json();
 
+    let aq_data;
     const data = {
         weather: weather_data,
-        // air_quality: aq_data
+        air_quality: aq_data
     };
-
+    //console.log(data.weather.currently.summary);
     response.json(data);
 });

@@ -14,6 +14,7 @@ async function getData() {
     const data = await response.json();
 
     for (item of data) {
+        console.log(item.weather);
         const marker = L.marker([item.lat, item.lon]).addTo(mymap);
         let txt = `The weather here at ${item.lat}&deg;, ${item.lon}&deg; is ${item.weather.summary} with a temperature of ${item.weather.temperature} degrees celsius.`;
 
